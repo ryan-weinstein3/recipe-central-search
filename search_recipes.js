@@ -2,6 +2,7 @@ var http = require('http');
 var url = require('url');
 const MongoClient = require('mongodb').MongoClient;
 
+var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
 http.createServer(function (req, res) {
@@ -30,4 +31,4 @@ http.createServer(function (req, res) {
 		}
  
 	});
-}).listen(8080);
+}).listen(port);
