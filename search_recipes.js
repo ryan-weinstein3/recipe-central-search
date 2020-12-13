@@ -16,7 +16,7 @@ http.createServer(function (req, res) {
 	//res.writeHead(200, {
     	//	'Content-Type': 'text/html'});
 	//res.write("<h1>Query Result</h1>");
-	var qobj = url.parse(req.url, true).query;
+	/*var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
@@ -38,5 +38,5 @@ http.createServer(function (req, res) {
 			console.log(err);
 		}
  
-	});
+	});*/
 }).listen(port);
