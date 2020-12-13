@@ -5,8 +5,6 @@ const MongoClient = require('mongodb').MongoClient;
 var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
-//<link rel="stylesheet" href="RecipeCentral.css" />
-
 http.createServer(function (req, res) {
 	res.writeHead(200, {
     		'Content-Type': 'text/html'});
