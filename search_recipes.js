@@ -13,6 +13,10 @@ app.get('/', (req, res)=>{
 res.render('home'); 
 }); 
 
+app.get('/homepage', (req, res)=>{ 
+res.render('homepage'); 
+}); 
+
 var server = app.listen((process.env.PORT || 3000), function() { 
     console.log('listening to port'); 
 }); 
