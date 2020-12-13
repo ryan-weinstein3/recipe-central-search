@@ -6,7 +6,10 @@ var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
 http.createServer(function (req, res) {
-	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.writeHead(200, {
+    		'Content-Type': 'text/html',
+    		<link rel="stylesheet" href="RecipeCentral.css" />
+  	});
 	res.write("<h1>Query Result</h1>");
 	var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
