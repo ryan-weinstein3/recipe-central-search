@@ -8,7 +8,7 @@ var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
 http.createServer(function (req, res) {
-	app.use(express.static("public"));
+	//app.use(express.static("public"));
 	app.set('view engine', 'ejs');
 	app.get('/', function(req, res) {
     		res.render('home');
