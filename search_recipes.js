@@ -7,6 +7,8 @@ var app = express();
 var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res)=>{ 
 res.render('home'); 
 }); 
