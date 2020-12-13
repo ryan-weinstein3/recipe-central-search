@@ -7,7 +7,15 @@ var app = express();
 var port = process.env.PORT || 3000;
 let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?retryWrites=true&w=majority"
 
-http.createServer(function (req, res) {
+app.get('/', (req, res)=>{ 
+res.render('home'); 
+}); 
+
+var server = app.listen((process.env.PORT || 3000), function() { 
+    console.log('listening to port'); 
+}); 
+
+/*http.createServer(function (req, res) {
 	//app.use(express.static("public"));
 	app.set('view engine', 'ejs');
 	app.get('/', function(req, res) {
@@ -38,5 +46,5 @@ http.createServer(function (req, res) {
 			console.log(err);
 		}
  
-	});*/
+	});
 }).listen(port);
