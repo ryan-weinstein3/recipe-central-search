@@ -1,3 +1,4 @@
+var nodemailer = require('nodemailer');
 var http = require('http');
 var url = require('url');
 const MongoClient = require('mongodb').MongoClient;
@@ -109,6 +110,38 @@ app.get('/SearchResults', (req, res)=>{
  
 	});
 }); 
+
+app.get('/SendEmail', (req, res)=>{
+	http.createServer(function(req, res) {
+	    res.writeHead(200, {'Content-Type': 'text/html'});
+	    var qobj = url.parse(req.url, true).query;
+	    var mailTo = qobj.email; 
+
+	var transporter = nodemailer.createTransport({
+	    service = 'gmail',
+	    auth: {
+		user: 'Recipecent@gmail.com',
+		pass: 'RecipeYum',
+		}
+	});
+
+	var mailOptions = {
+	    from: 'Recipe-Central',
+	    to: mailTo,
+	    subject: 'Thank you for joining!',
+	    text: 'Your information has been confirmed. Thank you for joining the Recipe Central community!'
+	};
+
+	transporter.sendMail(mailOptions, function(error, info) {
+	    if(error){
+		console.log(error);
+	    } else {
+		console.log('Email sent: ' + info.response);
+	    }
+	});
+
+	});
+});
 
 var server = app.listen((process.env.PORT || 3000), function() { 
 	console.log("Listening to port");
