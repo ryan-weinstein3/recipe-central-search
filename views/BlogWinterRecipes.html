@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10 Dinner Recipes Perfect For A Cozy Winter Night</title>
+<link rel="stylesheet" href="RecipeCentral.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+  		src="https://code.jquery.com/jquery-3.5.1.js"
+  		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous">
+ </script>
+	<style>
+	
+		h2 {text-align: center; font-size: 40px; color: #D60E0E}
+
+		.blogSearch {text-align: center}
+		
+		h4 {font-size: 30px; font-weight: bold}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="top">
+			<h1><a href="index.html"><img src="RecipeIcon.png" alt="logo" width="100" class="center"></a><span class="recipecentral" style = "vertical-align: super">Recipe Central</span></h1>
+		</div>
+	</header>
+	
+	<nav>
+	   	<ul class="nav">
+			<div class="topNav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Blogs.html">Blogs</a></li>
+			<li><a href="Recipes.html">Recipes</a></li>
+			<li><a href="About.html">About</a></li>
+			<li><a href="SubmitRecipe.html">Submit a recipe!</a></li>
+			</div>
+			<div class="searchbar">
+			<input type="text" placeholder="I'm looking for...">
+			<li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+			</div>
+	   	</ul>
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+    		$("#message").hide();
+		});
+	</script>
+
+	<h2><a href="Blogs.html" class="title">Blogs</a></h2>
+
+	<h1>10 Dinner Recipes Perfect For A Cozy Winter Night<br></h1>
+	
+	<p>It's winter which means we need meals to fit our ~cozy~ mood. We've got you covered with 10 meals perfect to while sitting next to the fire!</p>
+	
+	<h3>1. BBQ Pork Sloppy Joes with Pickled Onion &amp; Sweet Potato Wedges</h3>
+	<p>Holy moley this dish screams comfort food. How can we not resist!</p>
+	
+	<h3>2. Brown Stew Chicken</h3>
+	<p>Stews are the perfect dinner for cold nights! This dish is no exception.</p>
+		
+	<h3>3. Beef stroganoff</h3>
+	<p>This classic dish is perfect for the winter.</p>	
+
+	<h3>4. Chicken Fajita Mac and Cheese</h3>
+	<p>Who doesn't love mac and cheese? This Mexican twist will have you going for seconds.</p>	
+
+	<h3>5. Beef Brisket Pot Roast</h3>
+	<p>Pot roasts are the perfect dish to keep everyone warm and happy. Add brisket to the mix and you're in heaven!</p>	
+	
+	<h3>6. Braised Beef Chilli</h3>
+	<p>Chilli is a classic! We love this recipe for a sunday family dinner.</p>	
+	
+	<h3>7. Rosół (Polish Chicken Soup)</h3>
+	<p>If you haven't tried Rosół then you've been missing out!</p>	
+	
+	<h3>8. Crock Pot Chicken Baked Tacos</h3>
+	<p>One of our all time favorite Crockpot recipes! You gotta try this!</p>	
+
+	<h3>9. Chicken Enchilada Casserole</h3>
+	<p>Another cozy dish with a Mexican twist, we can't get enough!</p>	
+
+	<h3>10. Beef Dumpling Stew</h3>
+	<p>Another stew because as we said it's a perfect dish for cold nights.</p>	
+	
+	<p>Stay warm our friends!</p>
+	
+	<footer>
+	<h2>Join Our Newsletter!</h2>
+	<div class="row">
+		<div class="column">
+			<img src="HomeImg.jpg" alt="bottom1" width=250px height=200px>
+		</div>
+
+		<div class="column">
+			<img src="HomeImg4.jpg" alt="bottom2" width=250px height=200px>
+
+		</div>
+		<div class ="column">
+			<img src="Homeimg2.jpg" alt="bottom3" width=250px height=200px>
+
+
+		</div>
+		<div class="column">
+			<img src="HomeImg3.jpg" alt="bottom"  width=250px height=200px>
+		</div>
+	</div>
+
+	<form
+		name = "data"
+		method="post"
+		onsubmit = "return validate()">
+
+		<p id = "first">First Name: <input type="text"  name='fname' /></p>
+		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
+		<p id = "email"> Email: <input type="text" name='email' /></p>
+		<input type = "submit" value = "Submit" id = "submit"/>
+		<script>
+		$('form').submit(function(e){
+		    $('#first').hide(); 
+		    $('#last').hide(); 
+		    $('#email').hide(); 
+		    $('#message').show();
+		    e.preventDefault();
+		    $('#submit').hide(); 
+
+		    // Or with: return false;        
+		});
+		</script>
+	</form>
+	<div id = "message"> <br>Check your inbox and thanks for joining! </div>
+	
+	</footer>
+	<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+</body>
+</html><!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chicken Recipes For Every Day Of The Week</title>
+<link rel="stylesheet" href="RecipeCentral.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+  		src="https://code.jquery.com/jquery-3.5.1.js"
+  		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous">
+ </script>
+	<style>
+	
+		h2 {text-align: center; font-size: 40px; color: #D60E0E}
+
+		.blogSearch {text-align: center}
+		
+		h4 {font-size: 30px; font-weight: bold}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="top">
+			<h1><a href="index.html"><img src="RecipeIcon.png" alt="logo" width="100" class="center"></a><span class="recipecentral" style = "vertical-align: super">Recipe Central</span></h1>
+		</div>
+	</header>
+	
+	<nav>
+	   	<ul class="nav">
+			<div class="topNav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Blogs.html">Blogs</a></li>
+			<li><a href="Recipes.html">Recipes</a></li>
+			<li><a href="About.html">About</a></li>
+			<li><a href="SubmitRecipe.html">Submit a recipe!</a></li>
+			</div>
+			<div class="searchbar">
+			<input type="text" placeholder="I'm looking for...">
+			<li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+			</div>
+	   	</ul>
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+    		$("#message").hide();
+		});
+	</script>
+
+	<h2>Blogs</h2>
+
+	<h1>Chicken Recipes For Every Day Of The Week<br></h1>
+	
+	<p>Over here at Recipe Central, we LOVE chicken. It's such a versatile ingredient, and we're here to show you how you can utilize chicken for a meal every day of the week!</p>
+	
+	<h3>Sunday: Kung Pao Chicken</h3>
+	<p>Start your week off with a bang and make this amazing Kung Pao Chicken!</p>
+	
+	<h3>Monday: Tandoori Chicken</h3>
+	<p>Try making this delicious chicken dish on your grill for that extra char!</p>
+		
+	<h3>Tuesday: Teriyaki Chicken Casserole</h3>
+	<p>This new spin on Teriyaki Chicken is one the whol family will love!</p>	
+
+	<h3>Wednesday: Chicken Ham and Leek Pie</h3>
+	<p>We could eat this all day, every day. Though we thought we'd recommend this as a Wednesday pick-me-up instead.</p>	
+
+	<h3>Thursday: Chicken Karaage</h3>
+	<p>Chicken Karaage, also known as Japanese Fried Chicken, is delicious and will make the kiddos happy too!</p>	
+	
+	<h3>Friday: Nutty Chicken Curry</h3>
+	<p>This quick curry recipe is a great Friday night meal.</p>	
+	
+	<h3>Saturday: Crock Pot Chicken Baked Tacos</h3>
+	<p>Take advantage of your Saturday and start this delicious taco dish early.</p>	
+	
+	<p>We hope by the end of the week you'll be as crazy for chicken as we are!</p>
+	
+	<footer>
+	<h2>Join Our Newsletter!</h2>
+	<div class="row">
+		<div class="column">
+			<img src="HomeImg.jpg" alt="bottom1" width=250px height=200px>
+		</div>
+
+		<div class="column">
+			<img src="HomeImg4.jpg" alt="bottom2" width=250px height=200px>
+
+		</div>
+		<div class ="column">
+			<img src="Homeimg2.jpg" alt="bottom3" width=250px height=200px>
+
+
+		</div>
+		<div class="column">
+			<img src="HomeImg3.jpg" alt="bottom"  width=250px height=200px>
+		</div>
+	</div>
+
+	<form
+		name = "data"
+		method="post"
+		onsubmit = "return validate()">
+
+		<p id = "first">First Name: <input type="text"  name='fname' /></p>
+		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
+		<p id = "email"> Email: <input type="text" name='email' /></p>
+		<input type = "submit" value = "Submit" id = "submit"/>
+		<script>
+		$('form').submit(function(e){
+		    $('#first').hide(); 
+		    $('#last').hide(); 
+		    $('#email').hide(); 
+		    $('#message').show();
+		    e.preventDefault();
+		    $('#submit').hide(); 
+
+		    // Or with: return false;        
+		});
+		</script>
+	</form>
+	<div id = "message"> <br>Check your inbox and thanks for joining! </div>
+	
+	</footer>
+	<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+</body>
+</html>

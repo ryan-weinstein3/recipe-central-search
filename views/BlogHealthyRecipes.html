@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>5 Healthy Recipes That Everyone Will Love</title>
+<link rel="stylesheet" href="RecipeCentral.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+  		src="https://code.jquery.com/jquery-3.5.1.js"
+  		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous">
+ </script>
+	<style>
+	
+		h2 {text-align: center; font-size: 40px; color: #D60E0E}
+
+		.blogSearch {text-align: center}
+		
+		h4 {font-size: 30px; font-weight: bold}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="top">
+			<h1><a href="index.html"><img src="RecipeIcon.png" alt="logo" width="100" class="center"></a><span class="recipecentral" style = "vertical-align: super">Recipe Central</span></h1>
+		</div>
+	</header>
+	
+	<nav>
+	   	<ul class="nav">
+			<div class="topNav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Blogs.html">Blogs</a></li>
+			<li><a href="Recipes.html">Recipes</a></li>
+			<li><a href="About.html">About</a></li>
+			<li><a href="SubmitRecipe.html">Submit a recipe!</a></li>
+			</div>
+			<div class="searchbar">
+			<input type="text" placeholder="I'm looking for...">
+			<li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+			</div>
+	   	</ul>
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+    		$("#message").hide();
+		});
+	</script>
+
+	<h2><a href="Blogs.html" class="title">Blogs</a></h2>
+
+	<h1>5 Healthy Recipes That Everyone Will Love<br></h1>
+	
+	<p>Sometimes it can seem like you have to sacrifice taste for healthy. We're here to show you five recipes where this isn't the case!</p>
+	
+	<h3>1. Skillet Apple Pork Chops with Roasted Sweet Potatoes &amp; Zucchini</h3>
+	<p>This dish is SO GOOD.</p>
+		
+	<h3>2. Chicken Quinoa Greek Salad</h3>
+	<p>Even salad haters will love this dish.</p>	
+
+	<h3>3. Vietnamese Grilled Pork (bun-thit-nuong)</h3>
+	<p>This dish is so worth it. With plenty of vegetables, this dish still has so much flavor.</p>	
+
+	<h3>4. Beef Banh Mi Bowls with Sriracha Mayo, Carrot &amp; Pickled Cucumber</h3>
+	<p>Another delicious Asian meal with tons of veggies!</p>	
+	
+	<h3>5. Chicken Couscous</h3>
+	<p>Again, this is another dish with SO MUCH flavor!</p>	
+	
+	<footer>
+	<h2>Join Our Newsletter!</h2>
+	<div class="row">
+		<div class="column">
+			<img src="HomeImg.jpg" alt="bottom1" width=250px height=200px>
+		</div>
+
+		<div class="column">
+			<img src="HomeImg4.jpg" alt="bottom2" width=250px height=200px>
+
+		</div>
+		<div class ="column">
+			<img src="Homeimg2.jpg" alt="bottom3" width=250px height=200px>
+
+
+		</div>
+		<div class="column">
+			<img src="HomeImg3.jpg" alt="bottom"  width=250px height=200px>
+		</div>
+	</div>
+
+	<form
+		name = "data"
+		method="post"
+		onsubmit = "return validate()">
+
+		<p id = "first">First Name: <input type="text"  name='fname' /></p>
+		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
+		<p id = "email"> Email: <input type="text" name='email' /></p>
+		<input type = "submit" value = "Submit" id = "submit"/>
+		<script>
+		$('form').submit(function(e){
+		    $('#first').hide(); 
+		    $('#last').hide(); 
+		    $('#email').hide(); 
+		    $('#message').show();
+		    e.preventDefault();
+		    $('#submit').hide(); 
+
+		    // Or with: return false;        
+		});
+		</script>
+	</form>
+	<div id = "message"> <br>Check your inbox and thanks for joining! </div>
+	
+	</footer>
+	<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+</body>
+</html>
