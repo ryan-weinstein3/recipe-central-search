@@ -76,6 +76,7 @@ app.get('/Recipes', (req, res)=>{
 
 app.get('/SearchResults', (req, res)=>{ 
 		var qobj = url.parse(req.url, true).query;
+	console.log(qobj);
 	var query_string = qobj.query;
 	console.log(query_string);
 
