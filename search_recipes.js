@@ -14,6 +14,10 @@ app.get('/', (req, res)=>{
 	res.render('Home'); 
 }); 
 
+app.get('/About', (req, res)=>{ 
+	res.render('About'); 
+}); 
+
 app.get('/BlogChickenRecipes', (req, res)=>{ 
 	res.render('BlogChickenRecipes'); 
 }); 
@@ -36,6 +40,10 @@ app.get('/BlogWinterRecipes', (req, res)=>{
 
 app.get('/Blogs', (req, res)=>{ 
 	res.render('Blogs'); 
+}); 
+
+app.get('/SubmitRecipe', (req, res)=>{ 
+	res.render('SubmitRecipe'); 
 }); 
 
 app.get('/Recipes', (req, res)=>{ 
