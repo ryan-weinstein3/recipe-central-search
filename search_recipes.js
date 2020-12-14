@@ -10,8 +10,31 @@ let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?r
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
-app.get('/', (req, res)=>{ 
-//res.render('home', {data:data}); 
+app.get('/Recipes', (req, res)=>{ 
+    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
+	    try {
+		    if(err) { return console.log(err); }
+		    var dbo = db.db("Finaldb");
+			var collection = dbo.collection('Recipes');
+			var query = {};
+
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
+				if (err) throw err;
+				var data = JSON.stringify(result, null, 2);
+				console.log(data);
+				res.render('SearchResults', {data:data});
+			})
+			await db.close();
+			await res.end();
+		}
+		catch(err) {
+			console.log(err);
+		}
+ 
+	});
+}); 
+
+app.get('/SearchResults', (req, res)=>{ 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
 
@@ -26,8 +49,7 @@ app.get('/', (req, res)=>{
 				if (err) throw err;
 				var data = JSON.stringify(result, null, 2);
 				console.log(data);
-				//res.write(result_str);
-				res.render('home', {data:data});
+				res.render('SearchResults', {data:data});
 			})
 			await db.close();
 			await res.end();
