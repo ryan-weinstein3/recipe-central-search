@@ -75,10 +75,9 @@ app.get('/Recipes', (req, res)=>{
 }); 
 
 app.get('/SearchResults', (req, res)=>{ 
-		var qobj = url.parse(req.url, true).query;
-	console.log(qobj);
+	var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
-	console.log(query_string);
+	console.log("query string: " + query_string);
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
@@ -89,11 +88,13 @@ app.get('/SearchResults', (req, res)=>{
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
+				console.log("result: " + result);
 				var data = "";
 				for (var i = 0; i < result.length; i++){
                     			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='100' class='center'>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
+				console.log("data: " + data);
 				res.render('SearchResults', {data:data});
 			})
 			await db.close();
