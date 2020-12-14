@@ -26,6 +26,10 @@ app.get('/BlogHealthyRecipes', (req, res)=>{
 	res.render('BlogHealthyRecipes'); 
 }); 
 
+app.get('/Search', (req, res)=>{
+	res.render('Search');
+});
+
 app.get('/BlogHolidayRecipes', (req, res)=>{ 
 	res.render('BlogHolidayRecipes'); 
 }); 
