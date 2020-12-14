@@ -107,6 +107,7 @@ app.get('/SearchResults', (req, res)=>{
 }); 
 
 app.post('/submit', function (req, res) {
+	console.log('HELLOOOOOOO');
   res.redirect('/SearchResults');
 });
 
