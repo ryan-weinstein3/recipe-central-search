@@ -24,7 +24,7 @@ res.render('home');
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				var result_str = JSON.stringify(result, null, 2);
-				//console.log(result_str);
+				console.log(result_str);
 				//res.write(result_str);
 			})
 			await db.close();
