@@ -73,8 +73,9 @@
 			<li><a href="/SubmitRecipe">Submit a recipe!</a></li>
 			</div>
 			<div class="searchbar">
-			<input type="text" placeholder="I'm looking for...">
-			<li style="float:right"><button onclick="/SearchResults"><i class="fa fa-search"></i></button></li>
+			<form name = "data" method="post" onsubmit = "return validate()" target="_blank" action = "/Blogs">
+			<button type="submit">Submit</button>
+			</form>
 			</div>
 	   	</ul>
 	</nav>
