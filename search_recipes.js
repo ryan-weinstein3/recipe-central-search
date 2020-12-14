@@ -10,6 +10,34 @@ let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?r
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
+app.get('/', (req, res)=>{ 
+	res.render('Home'); 
+}); 
+
+app.get('/BlogChickenRecipes', (req, res)=>{ 
+	res.render('BlogChickenRecipes'); 
+}); 
+
+app.get('/BlogHealthyRecipes', (req, res)=>{ 
+	res.render('BlogHealthyRecipes'); 
+}); 
+
+app.get('/BlogHolidayRecipes', (req, res)=>{ 
+	res.render('BlogHolidayRecipes'); 
+}); 
+
+app.get('/BlogPastaRecipes', (req, res)=>{ 
+	res.render('BlogPastaRecipes'); 
+}); 
+
+app.get('/BlogWinterRecipes', (req, res)=>{ 
+	res.render('BlogWinterRecipes'); 
+}); 
+
+app.get('/Blogs', (req, res)=>{ 
+	res.render('Blogs'); 
+}); 
+
 app.get('/Recipes', (req, res)=>{ 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
@@ -59,10 +87,6 @@ app.get('/SearchResults', (req, res)=>{
 		}
  
 	});
-}); 
-
-app.get('/homepage', (req, res)=>{ 
-res.render('homepage'); 
 }); 
 
 var server = app.listen((process.env.PORT || 3000), function() { 
