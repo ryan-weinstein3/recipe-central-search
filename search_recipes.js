@@ -77,6 +77,7 @@ app.get('/Recipes', (req, res)=>{
 app.get('/SearchResults', (req, res)=>{ 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
+	console.log(query_string);
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
