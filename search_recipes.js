@@ -56,7 +56,10 @@ app.get('/Recipes', (req, res)=>{
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				var data = JSON.stringify(result, null, 2);
+				var raw_data = JSON.stringify(result, null, 2);
+				for (var i = 0; i < raw_data.length; i++){
+                    			var data = raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+                		}
 				console.log(data);
 				res.render('SearchResults', {data:data});
 			})
@@ -83,7 +86,10 @@ app.get('/SearchResults', (req, res)=>{
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				var data = JSON.stringify(result, null, 2);
+				var raw_data = JSON.stringify(result, null, 2);
+				for (var i = 0; i < raw_data.length; i++){
+                    			var data = raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+                		}
 				console.log(data);
 				res.render('SearchResults', {data:data});
 			})
@@ -100,39 +106,3 @@ app.get('/SearchResults', (req, res)=>{
 var server = app.listen((process.env.PORT || 3000), function() { 
     console.log('listening to port'); 
 }); 
-
-/*http.createServer(function (req, res) {
-	//app.use(express.static("public"));
-	app.set('view engine', 'ejs');
-	app.get('/', function(req, res) {
-    		res.render('home');
-	});
-	//res.writeHead(200, {
-    	//	'Content-Type': 'text/html'});
-	//res.write("<h1>Query Result</h1>");
-	var qobj = url.parse(req.url, true).query;
-	var query_string = qobj.query;
-
-    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
-	    try {
-		    if(err) { return console.log(err); }
-		    var dbo = db.db("Finaldb");
-			var collection = dbo.collection('Recipes');
-			var query = {strMeal: query_string};
-
-			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
-				if (err) throw err;
-				var result_str = JSON.stringify(result, null, 2);
-				res.write(result_str);
-			})
-			await db.close();
-			await res.end();
-		}
-		catch(err) {
-			console.log(err);
-		}
- 
-	});
-}).listen(port);*/
-
-
