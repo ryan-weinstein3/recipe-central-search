@@ -19,6 +19,29 @@ res.render('homepage');
 
 var server = app.listen((process.env.PORT || 3000), function() { 
     console.log('listening to port'); 
+	var qobj = url.parse(req.url, true).query;
+	var query_string = qobj.query;
+
+    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
+	    try {
+		    if(err) { return console.log(err); }
+		    var dbo = db.db("Finaldb");
+			var collection = dbo.collection('Recipes');
+			var query = {strMeal: query_string};
+
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
+				if (err) throw err;
+				var result_str = JSON.stringify(result, null, 2);
+				res.write(result_str);
+			})
+			await db.close();
+			await res.end();
+		}
+		catch(err) {
+			console.log(err);
+		}
+ 
+	});
 }); 
 
 /*http.createServer(function (req, res) {
