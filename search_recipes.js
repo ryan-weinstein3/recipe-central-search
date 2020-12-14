@@ -58,7 +58,7 @@ app.get('/Recipes', (req, res)=>{
 				if (err) throw err;
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3>" + result[i].strInstructions + "<br /><br />";
                 		}
 				res.render('Recipes', {data:data});
 			})
@@ -87,7 +87,7 @@ app.get('/SearchResults', (req, res)=>{
 				if (err) throw err;
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3>" + result[i].strInstructions + "<br /><br />";
                 		}
 				res.render('SearchResults', {data:data});
 			})
