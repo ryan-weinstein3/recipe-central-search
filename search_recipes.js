@@ -58,7 +58,7 @@ app.get('/Recipes', (req, res)=>{
 				if (err) throw err;
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br />";
+                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br /><br />";
                 		}
 				res.render('Recipes', {data:data});
 			})
