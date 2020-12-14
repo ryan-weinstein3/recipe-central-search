@@ -57,8 +57,9 @@ app.get('/Recipes', (req, res)=>{
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				var raw_data = JSON.stringify(result, null, 2);
+				var data = "";
 				for (var i = 0; i < raw_data.length; i++){
-                    			var data = raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+                    			data += raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
                 		}
 				console.log(data);
 				res.render('Recipes', {data:data});
@@ -87,8 +88,9 @@ app.get('/SearchResults', (req, res)=>{
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				var raw_data = JSON.stringify(result, null, 2);
+				var data = "";
 				for (var i = 0; i < raw_data.length; i++){
-                    			var data = raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+                    			data += raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
                 		}
 				console.log(data);
 				res.render('SearchResults', {data:data});
