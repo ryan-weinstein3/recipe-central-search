@@ -118,7 +118,7 @@ app.get('/SendEmail', (req, res)=>{
 	    var mailTo = qobj.email; 
 	
 
-	/*var transporter = nodemailer.createTransport({
+	var transporter = nodemailer.createTransport({
 	    service = 'gmail',
 	    auth: {
 		user: 'Recipecent@gmail.com',
@@ -126,7 +126,7 @@ app.get('/SendEmail', (req, res)=>{
 		}
 	});
 
-	var mailOptions = {
+	/*var mailOptions = {
 	    from: 'Recipe-Central',
 	    to: mailTo,
 	    subject: 'Thank you for joining!',
