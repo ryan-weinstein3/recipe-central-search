@@ -73,11 +73,10 @@
 			<li><a href="/SubmitRecipe">Submit a recipe!</a></li>
 			</div>
 			<div class="searchbar">
+			<form action = '/SearchResults' method = 'get'>
 			<input type="text" placeholder="I'm looking for...">
-			<li style="float:right"><form action="https://recipe-central-search.herokuapp.com/SearchResults" method='get' >
-			<p><input type="text" name="query"/></p>
-			<input type = "submit" value = "Search"/>
-		</form></li>
+			<li style="float:right"><button type="submit" ><i class="fa fa-search"></i></button></li>
+			</form>
 			</div>
 	   	</ul>
 	</nav>
