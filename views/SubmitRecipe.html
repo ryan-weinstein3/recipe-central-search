@@ -1,0 +1,85 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="RecipeCentral.css">
+    <header>
+        <div class="top">
+            <h1><a href="index.html"><img src="RecipeIcon.png" alt="logo" width="100" class="center"></a><span class="recipecentral" style = "vertical-align: super">Recipe Central</span></h1>
+        </div>
+    </header>
+    
+    <nav>
+        <ul class="nav">
+            <div class="topNav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="Recipes.html">Recipes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="SubmitRecipe.html">Submit a recipe!</a></li>
+            </div>
+            <div class="searchbar">
+            <input type="text" placeholder="Search by main ingredient...">
+            <li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+            </div>
+        </ul>
+    </nav>
+    <body>
+        <script
+        	src="https://code.jquery.com/jquery-3.5.1.js"
+          	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+         	crossorigin="anonymous">
+        </script>
+        <h1>Submit a Recipe</h1>
+        <form method='post' action='recipe_submission.php'>
+            <p>Name*: <input type="text"  name='name' /></p>
+            <p>Title*: <input type="text"  name='title' /></p>
+            <p>Ingredients*: <input type="text"  name='ingredients' /></p>
+            <p>Instructions*: <input type="text"  name='instructions' /></p>
+            <p>Email: <input type="text"  name='email' /></p>
+            <input type = "submit" value = "Submit Recipe" />
+        </form>
+        <script>
+            $('form').submit(function(){
+                var name = document.getElementsByName('name')[0].value;
+                var title = document.getElementsByName('title')[0].value;
+                var ingredients = document.getElementsByName('ingredients')[0].value;
+                var instructions = document.getElementsByName('instructions')[0].value;
+                var email = document.getElementsByName('email')[0].value;
+                if (name == '') {
+                    alert('Name is a required field. Could not submit.');
+                    event.preventDefault();
+                    return;
+                }
+                if (title == '') {
+                    alert('Title is a required field. Could not submit.');
+                    event.preventDefault();
+                    return;
+                }
+                if (ingredients == '') {
+                    alert('Ingredients is a required field. Could not submit.');
+                    event.preventDefault();
+                    return;
+                }
+                if (instructions == '') {
+                    alert('Instructions is a required field. Could not submit.');
+                    event.preventDefault();
+                    return;
+                }
+                var ind = email.indexOf("@");
+                if (ind == -1) {
+                    alert('Email is invalid (no @ symbol). Could not submit.');
+                    event.preventDefault();
+                    return;
+                }
+                else {
+                    var domain = email.substring(ind + 1);
+                    var period_ind = domain.indexOf(".");
+                    if (period_ind == -1) {
+                        alert('Email is invalid (no extension). Could not submit.');
+                        event.preventDefault();
+                        return;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
