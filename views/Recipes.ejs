@@ -40,6 +40,54 @@
 	</p>
 
 </body>
-<footer>
-</footer>
+	<footer>
+	<h2>Join Our Newsletter!</h2>
+	<div class="row">
+		<div class="column">
+			<img src="/public/images/HomeImg.jpg" alt="bottom1" width=250px height=200px>
+		</div>
+
+		<div class="column">
+			<img src="/public/images/HomeImg4.jpg" alt="bottom2" width=250px height=200px>
+
+		</div>
+		<div class ="column">
+			<img src="/public/images/Homeimg2.jpg" alt="bottom3" width=250px height=200px>
+
+
+		</div>
+		<div class="column">
+			<img src="/public/images/HomeImg3.jpg" alt="bottom"  width=250px height=200px>
+		</div>
+	</div>
+
+	<form
+		name = "data"
+		method="post"
+		onsubmit = "return validate()">
+
+		<p id = "first">First Name: <input type="text"  name='fname' /></p>
+		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
+		<p id = "email"> Email: <input type="text" name='email' /></p>
+		<input type = "submit" value = "Submit" id = "submit"/>
+		<script>
+		$('form').submit(function(e){
+		    $('#first').hide(); 
+		    $('#last').hide(); 
+		    $('#email').hide(); 
+		    $('#message').show();
+		    e.preventDefault();
+		    $('#submit').hide(); 
+		    // Or with: return false;        
+		});
+		</script>
+	</form>
+	<div id = "message"> <br>Check your inbox and thanks for joining! </div>
+	
+	</footer>
+	<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
 </html>
