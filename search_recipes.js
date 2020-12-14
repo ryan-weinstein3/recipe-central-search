@@ -10,7 +10,7 @@ let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?r
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res)=>{ 
-res.render('home'); 
+//res.render('home', {data:data}); 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
 
@@ -23,9 +23,10 @@ res.render('home');
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				var result_str = JSON.stringify(result, null, 2);
-				console.log(result_str);
+				var data = JSON.stringify(result, null, 2);
+				console.log(data);
 				//res.write(result_str);
+				res.render('home', {data:data});
 			})
 			await db.close();
 			await res.end();
