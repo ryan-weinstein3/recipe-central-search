@@ -19,8 +19,10 @@
             <li><a href="/SubmitRecipe">Submit a recipe!</a></li>
             </div>
             <div class="searchbar">
-            <input type="text" placeholder="Search by main ingredient...">
-            <li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+            <form action="https://recipe-central-search.herokuapp.com/SearchResults" method='get' >
+			<input type="text" placeholder="I'm looking for..." name="query">
+			<li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+			</form>
             </div>
         </ul>
     </nav>
