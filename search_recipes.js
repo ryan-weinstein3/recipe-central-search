@@ -14,6 +14,7 @@ res.render('home');
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
 	console.log(query_string);
+	console.log(qobj);
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
