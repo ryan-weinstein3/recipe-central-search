@@ -74,7 +74,10 @@
 			</div>
 			<div class="searchbar">
 			<input type="text" placeholder="I'm looking for...">
-			<li style="float:right"><button type="submit"><i class="fa fa-search"></i></button></li>
+			<li style="float:right"><button type="submit"><form action="https://recipe-central-search.herokuapp.com/SearchResults" method='get' >
+			<p><input type="text" name="query"/></p>
+			<input type = "submit" value = "Search"/>
+		</form><i class="fa fa-search"></i></button></li>
 			</div>
 	   	</ul>
 	</nav>
