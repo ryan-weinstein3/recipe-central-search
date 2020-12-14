@@ -116,6 +116,7 @@ app.get('/SendEmail', (req, res)=>{
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    var qobj = url.parse(req.url, true).query;
 	    var mailTo = qobj.email; 
+	
 
 	/*var transporter = nodemailer.createTransport({
 	    service = 'gmail',
@@ -138,10 +139,8 @@ app.get('/SendEmail', (req, res)=>{
 	    } else {
 		console.log('Email sent: ' + info.response);
 	    }
-	});
-
 	});*/
-	console.log('hello');
+	});
 });
 
 var server = app.listen((process.env.PORT || 3000), function() { 
