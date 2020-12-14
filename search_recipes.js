@@ -52,7 +52,7 @@ app.get('/Recipes', (req, res)=>{
 		    if(err) { return console.log(err); }
 		    var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
-			var query = {};
+			var query = {strMeal: "Chicken Handi"};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
