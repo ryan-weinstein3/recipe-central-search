@@ -73,8 +73,8 @@
 			<li><a href="/SubmitRecipe">Submit a recipe!</a></li>
 			</div>
 			<div class="searchbar">
-			<form name = "data" method="get">
-			<input type="submit" formaction="/SearchResults"/>
+			<form action="https://recipe-central-search.herokuapp.com/SearchResults" method="get">
+			<input type="submit"/>
 			</form>
 			</div>
 	   	</ul>
@@ -139,7 +139,7 @@
 
 	<form
 		name = "data"
-		class = "form1"
+		class = "signup"
 		method="post"
 		onsubmit = "return validate()">
 
@@ -148,14 +148,13 @@
 		<p id = "email"> Email: <input type="text" name='email' /></p>
 		<input type = "submit" value = "Submit" id = "submit"/>
 		<script>
-		$('form.form1').submit(function(e){
+		$('form.signup').submit(function(e){
 		    $('#first').hide(); 
 		    $('#last').hide(); 
 		    $('#email').hide(); 
 		    $('#message').show();
 		    e.preventDefault();
 		    $('#submit').hide(); 
-
 		    // Or with: return false;        
 		});
 		</script>
