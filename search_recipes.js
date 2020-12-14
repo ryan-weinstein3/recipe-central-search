@@ -58,7 +58,7 @@ app.get('/Recipes', (req, res)=>{
 				console.log(result);
 				if (err) throw err;
 				var raw_data = JSON.stringify(result, null, 2);
-				//console.log(raw_data);
+				console.log(raw_data);
 				var data = "";
 				for (var i = 0; i < raw_data.length; i++){
                     			data += raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
