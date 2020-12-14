@@ -1,6 +1,10 @@
 <html>
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href= "/public/assets/style.css" rel="stylesheet" type="text/css" />
+<title>Submit a Recipe!</title>
+</head>
+
     <header>
         <div class="top">
             <h1><a href="/"><img src="/public/images/RecipeIcon.png" alt="logo" width="100" class="center"></a><span class="recipecentral" style = "vertical-align: super">Recipe Central</span></h1>
@@ -11,10 +15,10 @@
         <ul class="nav">
             <div class="topNav">
            <li><a href="/">Home</a></li>
-			<li><a href="/Blogs">Blogs</a></li>
-			<li><a href="/Recipes">Recipes</a></li>
-			<li><a href="/About">About</a></li>
-			<li><a href="/SubmitRecipe">Submit a recipe!</a></li>
+		<li><a href="/Blogs">Blogs</a></li>
+		<li><a href="/Recipes">Recipes</a></li>
+		<li><a href="/About">About</a></li>
+		<li><a href="/SubmitRecipe">Submit a recipe!</a></li>
             </div>
             <div class="searchbar">
             <input type="text" placeholder="Search by main ingredient...">
@@ -28,7 +32,8 @@
           	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
          	crossorigin="anonymous">
         </script>
-        <h1>Submit a Recipe</h1>
+                <h1>Application to Submit Recipe</h1>
+        <p> Fill out the form below to submit a recipe for approval. If we at Recipe Central LOVE your recipe, we'll add it to our list, and dedicate it to you! </p>
         <form method='post' action='recipe_submission.php'>
             <p>Name*: <input type="text"  name='name' /></p>
             <p>Title*: <input type="text"  name='title' /></p>
