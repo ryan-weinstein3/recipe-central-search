@@ -13,8 +13,9 @@ app.get('/', (req, res)=>{
 res.render('home'); 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
+	console.log(query_string);
 
-    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
+    /*MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
 		    if(err) { return console.log(err); }
 		    var dbo = db.db("Finaldb");
@@ -33,7 +34,7 @@ res.render('home');
 			console.log(err);
 		}
  
-	});
+	});*/
 }); 
 
 app.get('/homepage', (req, res)=>{ 
