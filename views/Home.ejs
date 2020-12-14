@@ -139,6 +139,7 @@
 
 	<form
 		name = "data"
+		class = "form1"
 		method="post"
 		onsubmit = "return validate()">
 
@@ -147,7 +148,7 @@
 		<p id = "email"> Email: <input type="text" name='email' /></p>
 		<input type = "submit" value = "Submit" id = "submit"/>
 		<script>
-		$('form').submit(function(e){
+		$('form.form1').submit(function(e){
 		    $('#first').hide(); 
 		    $('#last').hide(); 
 		    $('#email').hide(); 
