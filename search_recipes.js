@@ -54,7 +54,7 @@ app.get('/Recipes', (req, res)=>{
 			var collection = dbo.collection('Recipes');
 			var query = {};
 
-			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				console.log(result);
 				var data = "";
