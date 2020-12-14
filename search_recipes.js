@@ -112,12 +112,12 @@ app.get('/SearchResults', (req, res)=>{
 }); 
 
 app.get('/SendEmail', (req, res)=>{
-	/*http.createServer(function(req, res) {
+	http.createServer(function(req, res) {
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    var qobj = url.parse(req.url, true).query;
 	    var mailTo = qobj.email; 
 
-	var transporter = nodemailer.createTransport({
+	/*var transporter = nodemailer.createTransport({
 	    service = 'gmail',
 	    auth: {
 		user: 'Recipecent@gmail.com',
