@@ -13,6 +13,7 @@ app.get('/', (req, res)=>{
 res.render('home'); 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
+	console.log("HELLO");
 	console.log(query_string);
 	console.log(qobj);
 
