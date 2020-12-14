@@ -55,7 +55,7 @@ app.get('/Recipes', (req, res)=>{
 			var query = {strMeal: "Chicken Handi"};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
-				console.log(result);
+				//console.log(result);
 				if (err) throw err;
 				var raw_data = JSON.stringify(result, null, 2);
 				console.log(raw_data);
