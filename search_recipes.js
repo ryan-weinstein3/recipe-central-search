@@ -15,10 +15,10 @@ res.render('home');
 	var query_string = qobj.query;
 	console.log(query_string);
 
-    /*MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
+    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
 		    if(err) { return console.log(err); }
-		    var dbo = db.db("Finaldb");
+		    /*var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
 			var query = {strMeal: query_string};
 
@@ -28,13 +28,13 @@ res.render('home');
 				res.write(result_str);
 			})
 			await db.close();
-			await res.end();
+			await res.end();*/
 		}
 		catch(err) {
 			console.log(err);
 		}
  
-	});*/
+	});
 }); 
 
 app.get('/homepage', (req, res)=>{ 
