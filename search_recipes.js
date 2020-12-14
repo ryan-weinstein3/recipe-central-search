@@ -55,15 +55,11 @@ app.get('/Recipes', (req, res)=>{
 			var query = {strMeal: "Chicken Handi"};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
-				//console.log(result);
 				if (err) throw err;
-				var raw_data = JSON.stringify(result, null, 2);
-				console.log(raw_data);
 				var data = "";
-				for (var i = 0; i < raw_data.length; i++){
-                    			data += raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+				for (var i = 0; i < result.length; i++){
+                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br />";
                 		}
-				//console.log(data);
 				res.render('Recipes', {data:data});
 			})
 			await db.close();
@@ -89,12 +85,10 @@ app.get('/SearchResults', (req, res)=>{
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				var raw_data = JSON.stringify(result, null, 2);
 				var data = "";
-				for (var i = 0; i < raw_data.length; i++){
-                    			data += raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
+				for (var i = 0; i < result.length; i++){
+                    			data += result[i].strMeal + "<br />" + result[i].strInstructions + "<br />";
                 		}
-				console.log(data);
 				res.render('SearchResults', {data:data});
 			})
 			await db.close();
