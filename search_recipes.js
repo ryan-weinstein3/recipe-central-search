@@ -111,7 +111,7 @@ app.get('/SearchResults', (req, res)=>{
 	});
 }); 
 
-app.get('/SendEmail', (req, res)=>{
+/*app.get('/SendEmail', (req, res)=>{
 	http.createServer(function(req, res) {
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    var qobj = url.parse(req.url, true).query;
@@ -141,7 +141,7 @@ app.get('/SendEmail', (req, res)=>{
 	});
 
 	});
-});
+});*/
 
 var server = app.listen((process.env.PORT || 3000), function() { 
 	console.log("Listening to port");
