@@ -123,7 +123,7 @@ app.get('/SendEmail', (req, res)=>{
 	    auth: {
 		user: 'Recipecent@gmail.com',
 		pass: 'RecipeYum',
-		}
+		},
 	});
 
 	/*var mailOptions = {
