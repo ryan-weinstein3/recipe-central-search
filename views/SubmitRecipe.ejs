@@ -34,7 +34,7 @@
         </script>
                 <h1>Application to Submit Recipe</h1>
         <p> Fill out the form below to submit a recipe for approval. If we at Recipe Central LOVE your recipe, we'll add it to our list, and dedicate it to you! </p>
-        <form method='post' action='recipe_submission.php'>
+        <form class='recipe_submission' method='post' action='recipe_submission.php'>
             <p>Name*: <input type="text"  name='name' /></p>
             <p>Title*: <input type="text"  name='title' /></p>
             <p>Ingredients*: <input type="text"  name='ingredients' /></p>
@@ -43,7 +43,7 @@
             <input type = "submit" value = "Submit Recipe" />
         </form>
         <script>
-            $('form').submit(function(){
+            $('form.recipe_submission').submit(function(){
                 var name = document.getElementsByName('name')[0].value;
                 var title = document.getElementsByName('title')[0].value;
                 var ingredients = document.getElementsByName('ingredients')[0].value;
@@ -109,6 +109,7 @@
 
 	<form
 		name = "data"
+		class = "signup"
 		method="post"
 		onsubmit = "return validate()">
 
@@ -117,7 +118,7 @@
 		<p id = "email"> Email: <input type="text" name='email' /></p>
 		<input type = "submit" value = "Submit" id = "submit"/>
 		<script>
-		$('form').submit(function(e){
+		$('form.signup').submit(function(e){
 		    $('#first').hide(); 
 		    $('#last').hide(); 
 		    $('#email').hide(); 
