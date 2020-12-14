@@ -61,7 +61,7 @@ app.get('/Recipes', (req, res)=>{
                     			var data = raw_data[i].strMeal + "<br />" + raw_data[i].strInstructions + "<br />";
                 		}
 				console.log(data);
-				res.render('SearchResults', {data:data});
+				res.render('Recipes', {data:data});
 			})
 			await db.close();
 			await res.end();
