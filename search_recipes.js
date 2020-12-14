@@ -17,7 +17,7 @@ app.get('/homepage', (req, res)=>{
 res.render('homepage'); 
 }); 
 
-var server = app.listen((process.env.PORT || 3000), function() { 
+var server = app.listen((process.env.PORT || 3000), function(req, res) { 
     console.log('listening to port'); 
 	var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
