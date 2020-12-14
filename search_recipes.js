@@ -13,9 +13,6 @@ app.get('/', (req, res)=>{
 res.render('home'); 
 		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
-	console.log("HELLO");
-	console.log(query_string);
-	console.log(qobj);
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
@@ -24,11 +21,11 @@ res.render('home');
 			var collection = dbo.collection('Recipes');
 			var query = {strMeal: query_string};
 
-			/*await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				var result_str = JSON.stringify(result, null, 2);
 				res.write(result_str);
-			})*/
+			})
 			await db.close();
 			await res.end();
 		}
