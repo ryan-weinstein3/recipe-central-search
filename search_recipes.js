@@ -59,7 +59,7 @@ app.get('/Recipes', (req, res)=>{
 				console.log(result);
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='100' class='center'>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
 				res.render('Recipes', {data:data});
