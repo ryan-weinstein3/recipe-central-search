@@ -10,6 +10,9 @@ let db_url = "mongodb+srv://Jaysonpit:Giamo@cluster0.jfe6e.mongodb.net/Finaldb?r
 app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 
+
+var server = app.listen((process.env.PORT || 3000), function() { 
+
 app.get('/', (req, res)=>{ 
 	res.render('Home'); 
 }); 
@@ -106,6 +109,4 @@ app.get('/SearchResults', (req, res)=>{
 	});
 }); 
 
-var server = app.listen((process.env.PORT || 3000), function() { 
-    console.log('listening to port'); 
 }); 
