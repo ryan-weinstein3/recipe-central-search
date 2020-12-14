@@ -61,6 +61,7 @@ app.get('/Recipes', (req, res)=>{
 				for (var i = 0; i < result.length; i++){
                     			data += "<h3>" + result[i].strMeal + "</h3>" + result[i].strInstructions + "<br /><br />";
                 		}
+				data = data.replace(/\r\n/g, "<br/>");
 				res.render('Recipes', {data:data});
 			})
 			await db.close();
