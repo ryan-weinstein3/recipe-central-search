@@ -11,15 +11,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res)=>{ 
 res.render('home'); 
-}); 
-
-app.get('/homepage', (req, res)=>{ 
-res.render('homepage'); 
-}); 
-
-var server = app.listen((process.env.PORT || 3000), function(req, res) { 
-    console.log('listening to port'); 
-	var qobj = url.parse(req.url, true).query;
+		var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
@@ -42,6 +34,14 @@ var server = app.listen((process.env.PORT || 3000), function(req, res) {
 		}
  
 	});
+}); 
+
+app.get('/homepage', (req, res)=>{ 
+res.render('homepage'); 
+}); 
+
+var server = app.listen((process.env.PORT || 3000), function() { 
+    console.log('listening to port'); 
 }); 
 
 /*http.createServer(function (req, res) {
