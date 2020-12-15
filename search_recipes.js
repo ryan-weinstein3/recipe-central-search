@@ -110,11 +110,10 @@ app.get('/SearchResults', (req, res)=>{
 }); 
 
 app.get('/SendEmail', (req, res)=>{
-	console.log('HELLO');
 	var qobj = url.parse(req.url, true).query;
 	var mailTo = qobj.email; 
+	console.log(qobj);
 	
-	console.log('HELLO');
 	var transporter = nodemailer.createTransport({
 	    service: 'gmail',
 	    auth: {
@@ -122,14 +121,12 @@ app.get('/SendEmail', (req, res)=>{
 		pass: 'RecipeYum123',
 		}
 	});
-	console.log('HELLO');
 	var mailOptions = {
 	    from: 'recipecent@gmail.com',
 	    to: mailTo,
 	    subject: 'Thank you for joining!',
 	    text: 'Your information has been confirmed. Thank you for joining the Recipe Central community!'
 	};
-	console.log('HELLO');
 	transporter.sendMail(mailOptions, function(error, info) {
 	    if(error){
 		console.log(error);
