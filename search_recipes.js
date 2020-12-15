@@ -109,7 +109,7 @@ app.get('/SearchResults', (req, res)=>{
 	});
 }); 
 
-app.post('/SendEmail', (req, res)=>{
+app.get('/SendEmail', (req, res)=>{
 	console.log('HELLO');
 	var qobj = url.parse(req.url, true).query;
 	var mailTo = qobj.email; 
