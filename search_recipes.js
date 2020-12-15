@@ -82,25 +82,22 @@ app.get('/Recipes', (req, res)=>{
 app.get('/SearchResults', (req, res)=>{ 
 	var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
-	console.log("query string: " + query_string);
 
     MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
 	    try {
 		    if(err) { return console.log(err); }
 		    var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
-		    	query_string = "{$regex:'.*" + query_string + ".*'}";
+		    	query_string = '{$regex:".*' + query_string + '.*"}';
 			var query = {strMeal: query_string};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				console.log("result: " + result);
 				var data = "";
 				for (var i = 0; i < result.length; i++){
                     			data += "<h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
-				console.log("data: " + data);
 				res.render('SearchResults', {data:data});
 			})
 			await db.close();
