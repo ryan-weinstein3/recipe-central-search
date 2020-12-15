@@ -111,10 +111,8 @@ app.get('/SearchResults', (req, res)=>{
 
 app.post('/SendEmail', (req, res)=>{
 	console.log('HELLO');
-	http.createServer(function(req, res) {
-	    res.writeHead(200, {'Content-Type': 'text/html'});
-	    var qobj = url.parse(req.url, true).query;
-	    var mailTo = qobj.email; 
+	var qobj = url.parse(req.url, true).query;
+	var mailTo = qobj.email; 
 	
 	console.log('HELLO');
 	var transporter = nodemailer.createTransport({
@@ -138,7 +136,6 @@ app.post('/SendEmail', (req, res)=>{
 	    } else {
 		console.log('Email sent: ' + info.response);
 	    }
-	});
 	});
 });
 
