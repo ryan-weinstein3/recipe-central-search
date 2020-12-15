@@ -134,7 +134,7 @@ app.get('/SendEmail', (req, res)=>{
 		console.log('Email sent: ' + info.response);
 	    }
 	});
-	//res.render('Home');
+	res.render('Home');
 });
 
 var server = app.listen((process.env.PORT || 3000), function() { 
