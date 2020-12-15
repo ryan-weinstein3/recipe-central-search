@@ -59,11 +59,11 @@ app.get('/Recipes', (req, res)=>{
 			var collection = dbo.collection('Recipes');
 			var query = {};
 
-			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1, strIngredients: 1}}).toArray(function (err, result) {
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
 				res.render('Recipes', {data:data});
@@ -90,12 +90,12 @@ app.get('/SearchResults', (req, res)=>{
 			var collection = dbo.collection('Recipes');
 			var query = {strMeal: query_string};
 
-			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1, strIngredients: 1}}).toArray(function (err, result) {
+			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
 				console.log("result: " + result);
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
 				console.log("data: " + data);
