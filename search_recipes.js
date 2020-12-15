@@ -124,7 +124,7 @@ app.get('/SendEmail', (req, res)=>{
 		user: 'Recipecent@gmail.com',
 		pass: 'RecipeYum',
 		}
-	});
+	});*/
 
 	var mailOptions = {
 	    from: 'Recipe-Central',
@@ -133,7 +133,7 @@ app.get('/SendEmail', (req, res)=>{
 	    text: 'Your information has been confirmed. Thank you for joining the Recipe Central community!'
 	};
 
-	transporter.sendMail(mailOptions, function(error, info) {
+	/*transporter.sendMail(mailOptions, function(error, info) {
 	    if(error){
 		console.log(error);
 	    } else {
