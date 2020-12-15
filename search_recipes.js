@@ -63,7 +63,7 @@ app.get('/Recipes', (req, res)=>{
 				if (err) throw err;
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
 				res.render('Recipes', {data:data});
@@ -95,7 +95,7 @@ app.get('/SearchResults', (req, res)=>{
 				console.log("result: " + result);
 				var data = "";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<h3>" + result[i].strMeal + "</h3><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h4>Ingredients</h4>" + result[i].strIngredients + "<br/><h4>Instructions</h4>" + result[i].strInstructions + "<br /><br />";
                 		}
 				data = data.replace(/\r\n/g, "<br/>");
 				console.log("data: " + data);
