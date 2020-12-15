@@ -88,7 +88,7 @@ app.get('/SearchResults', (req, res)=>{
 		    if(err) { return console.log(err); }
 		    var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
-			var query = {strMeal: {new RegExp('.*' + query_string.toLowerCase() + '.*', 'i')}};
+			var query = {strMeal: {$regex: new RegExp('.*' + query_string.toLowerCase() + '.*', 'i')}};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
