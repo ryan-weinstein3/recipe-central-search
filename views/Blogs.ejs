@@ -65,21 +65,22 @@
 		<h2><a href="/Blogs" class="title">Blogs</a></h2>
 		<div class = "blogSearch">
 		<h4>Search for a blog:
-		<input type="text" placeholder="I'm looking for..." size="40">
-		<button type="submit"><i class="fa fa-search" size="40"></i></button></li></h4>
+		<input type="text" id="blogSearch" onkeyup="filter()" placeholder="I'm looking for..." size="40">
 		</div>
 
 
-		<h3><a href="/BlogHolidayRecipes" class="blogs">5 Recipes You Need To Try This Holiday Season<br></a></h3>
-		<img src="/public/images/holiday-meal.jpg" alt="meal" width = 400px height = inherit>
-		<h3><a href="/BlogChickenRecipes" class="blogs">Chicken Recipes For Any Day Of The Week<br></a></h3>
-		<img src="/public/images/ChickenDishes.jpg" alt="meal" width = 400px height = inherit>
-		<h3><a href="/BlogWinterRecipes" class="blogs">10 Dinner Recipes Perfect For A Cozy Winter Night<br></a></h3>
-		<img src="/public/images/FoodFireplace.jpg" alt="meal" width = 400px height = inherit>
-		<h3><a href="/BlogHealthyRecipes" class="blogs">8 Healthy Recipes That Everyone Will Love<br></a></h3>
-		<img src="/public/images/HealthyRecipes.jpg" alt="meal" width = 400px height = inherit>
-		<h3><a href="/BlogPastaRecipes" class="blogs">4 Pasta and Noodle Recipes To Satisfy The Whole Family</a></h3>
-		<img src="/public/images/Pastas.jpg" alt="meal" width = 400px height = inherit>
+	<ul id="blogsfilter">
+		<li><h3><a href="/BlogHolidayRecipes" class="blogs">5 Recipes You Need To Try This Holiday Season<br></a></h3>
+		<img src="/public/images/holiday-meal.jpg" alt="meal" width = 400px height = inherit></li>
+		<li><h3><a href="/BlogChickenRecipes" class="blogs">Chicken Recipes For Any Day Of The Week<br></a></h3>
+		<img src="/public/images/ChickenDishes.jpg" alt="meal" width = 400px height = inherit></li>
+		<li><h3><a href="/BlogWinterRecipes" class="blogs">10 Dinner Recipes Perfect For A Cozy Winter Night<br></a></h3>
+		<img src="/public/images/FoodFireplace.jpg" alt="meal" width = 400px height = inherit></li>
+		<li><h3><a href="/BlogHealthyRecipes" class="blogs">8 Healthy Recipes That Everyone Will Love<br></a></h3>
+		<img src="/public/images/HealthyRecipes.jpg" alt="meal" width = 400px height = inherit></li>
+		<li><h3><a href="/BlogPastaRecipes" class="blogs">4 Pasta and Noodle Recipes To Satisfy The Whole Family</a></h3>
+		<img src="/public/images/Pastas.jpg" alt="meal" width = 400px height = inherit></li>
+	</ul>
 
 	
 	<footer>
@@ -131,6 +132,24 @@
 	<script>
 if ( window.history.replaceState ) {
   window.history.replaceState( null, null, window.location.href );
+}
+</script>
+<script>
+function filter() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("blogSearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("blogsfilter");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
 </script>
 </body>
