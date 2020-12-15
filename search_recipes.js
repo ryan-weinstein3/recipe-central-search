@@ -110,6 +110,7 @@ app.get('/SearchResults', (req, res)=>{
 }); 
 
 app.post('/SendEmail', (req, res)=>{
+	console.log('HELLO');
 	http.createServer(function(req, res) {
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    var qobj = url.parse(req.url, true).query;
