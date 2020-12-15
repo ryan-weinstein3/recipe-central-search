@@ -86,31 +86,36 @@ app.get('/Recipes', (req, res)=>{
 app.get('/SearchResults', (req, res)=>{ 
 	var qobj = url.parse(req.url, true).query;
 	var query_string = qobj.query;
+	if (query_string == undefined) {
+		res.render('SearchResults', {data:""});
+	}
+	else {
 
-    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
-	    try {
-		    if(err) { return console.log(err); }
-		    var dbo = db.db("Finaldb");
-			var collection = dbo.collection('Recipes');
-			var query = {strMeal: {$regex: new RegExp('.*' + query_string.toLowerCase() + '.*', 'i')}};
+	    MongoClient.connect(db_url, {useUnifiedTopology: true}, async function(err, db) {
+		    try {
+			    if(err) { return console.log(err); }
+			    var dbo = db.db("Finaldb");
+				var collection = dbo.collection('Recipes');
+				var query = {strMeal: {$regex: new RegExp('.*' + query_string.toLowerCase() + '.*', 'i')}};
 
-			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
-				if (err) throw err;
-				var data = "";
-				for (var i = 0; i < result.length; i++){
-                    			data += "<h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br />";
-                		}
-				data = data.replace(/\r\n/g, "<br/>");
-				res.render('SearchResults', {data:data});
-			})
-			await db.close();
-			await res.end();
-		}
-		catch(err) {
-			console.log(err);
-		}
- 
-	});
+				await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
+					if (err) throw err;
+					var data = "";
+					for (var i = 0; i < result.length; i++){
+						data += "<h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br />";
+					}
+					data = data.replace(/\r\n/g, "<br/>");
+					res.render('SearchResults', {data:data});
+				})
+				await db.close();
+				await res.end();
+			}
+			catch(err) {
+				console.log(err);
+			}
+
+		});
+	}
 }); 
 
 app.get('/SendEmail', (req, res)=>{
