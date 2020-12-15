@@ -63,7 +63,7 @@ app.get('/Recipes', (req, res)=>{
 				if (err) throw err;
 				var data = "<ul id="recipesfilter">";
 				for (var i = 0; i < result.length; i++){
-                    			data += "<h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br />";
+                    			data += "<li><h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br /></li>";
                 		}
 				data += "</ul>";
 				data = data.replace(/\r\n/g, "<br/>");
