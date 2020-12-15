@@ -125,7 +125,7 @@ app.post('/SendEmail', (req, res)=>{
 	});
 	console.log('HELLO');
 	var mailOptions = {
-	    from: 'Recipe-Central',
+	    from: 'recipecent@gmail.com',
 	    to: mailTo,
 	    subject: 'Thank you for joining!',
 	    text: 'Your information has been confirmed. Thank you for joining the Recipe Central community!'
