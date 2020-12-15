@@ -88,7 +88,7 @@ app.get('/SearchResults', (req, res)=>{
 		    if(err) { return console.log(err); }
 		    var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
-		        query_string = '{$regex: ".*' + query_string  'abc.", $options:"i"}';
+		        query_string = "{$regex: '.*" + query_string  "abc.', $options:'i'}";
 			var query = {strMeal: query_string};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
