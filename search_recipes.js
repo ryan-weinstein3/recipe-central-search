@@ -124,8 +124,8 @@ app.get('/SendEmail', (req, res)=>{
 	var mailOptions = {
 	    from: 'recipecent@gmail.com',
 	    to: mailTo,
-	    subject: 'Thank you for joining, ' + fname + '!',
-	    text: fname + ', your information has been confirmed. Thank you for joining the Recipe Central community!'
+	    subject: 'Thank you for joining, ' + name + '!',
+	    text: name + ', your information has been confirmed. Thank you for joining the Recipe Central community!'
 	};
 	transporter.sendMail(mailOptions, function(error, info) {
 	    if(error){
