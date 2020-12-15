@@ -255,8 +255,9 @@ if ( window.history.replaceState ) {
 		<form
 		name = "data"
 		class = "signup"
-		method="post"
-		onsubmit = "return validate()">
+		method="get"
+		onsubmit = "return validate()"
+		action="/SendEmail">
 
 		<p id = "first">First Name*: <input type="text"  name='fname' /></p>
 		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
@@ -290,7 +291,7 @@ if ( window.history.replaceState ) {
 		    $('#last').hide(); 
 		    $('#email').hide(); 
 		    $('#message').show();
-		    e.preventDefault();
+		    //e.preventDefault();
 		    $('#submit').hide(); 
 		    // Or with: return false;        
 		});
