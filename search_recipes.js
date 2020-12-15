@@ -112,7 +112,7 @@ app.get('/SearchResults', (req, res)=>{
 app.get('/SendEmail', (req, res)=>{
 	var qobj = url.parse(req.url, true).query;
 	var mailTo = qobj.email; 
-	console.log(qobj);
+	var name = qobj.fname;
 	
 	var transporter = nodemailer.createTransport({
 	    service: 'gmail',
@@ -124,8 +124,8 @@ app.get('/SendEmail', (req, res)=>{
 	var mailOptions = {
 	    from: 'recipecent@gmail.com',
 	    to: mailTo,
-	    subject: 'Thank you for joining!',
-	    text: 'Your information has been confirmed. Thank you for joining the Recipe Central community!'
+	    subject: 'Thank you for joining, ' + fname + '!',
+	    text: fname + ', your information has been confirmed. Thank you for joining the Recipe Central community!'
 	};
 	transporter.sendMail(mailOptions, function(error, info) {
 	    if(error){
