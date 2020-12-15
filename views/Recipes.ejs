@@ -57,14 +57,14 @@
 
 <script>
 	function filter() {
-	    var input, filter, ul, li, a, i, txtValue;
+	    var input, filter, ul, li, h, i, txtValue;
 	    input = document.getElementById("recipeSearch");
 	    filter = input.value.toUpperCase();
 	    ul = document.getElementById("recipesfilter");
 	    li = ul.getElementsByTagName("li");
 	    for (i = 0; i < li.length; i++) {
-		a = li[i].getElementsByTagName("a")[0];
-		txtValue = a.textContent || a.innerText;
+		h = li[i].getElementsByTagName("h4")[0];
+		txtValue = h.textContent || h.innerText;
 		if (txtValue.toUpperCase().indexOf(filter) > -1) {
 		    li[i].style.display = "";
 		} else {
