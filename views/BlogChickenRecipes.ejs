@@ -108,18 +108,40 @@
 		</div>
 	</div>
 
-	<form
+		<form
 		name = "data"
 		class = "signup"
 		method="post"
 		onsubmit = "return validate()">
 
-		<p id = "first">First Name: <input type="text"  name='fname' /></p>
+		<p id = "first">First Name*: <input type="text"  name='fname' /></p>
 		<p id = "last">Last Name:  <input type="text"  name='lname' /></p>
-		<p id = "email"> Email: <input type="text" name='email' /></p>
+		<p id = "email"> Email*: <input type="text" name='email' /></p>
 		<input type = "submit" value = "Submit" id = "submit"/>
 		<script>
 		$('form.signup').submit(function(e){
+			var fname = document.getElementsByName('fname')[0].value;
+			var email = document.getElementsByName('email')[0].value;
+			if (fname == '') {
+			    alert('First name is a required field. Could not submit.');
+			    event.preventDefault();
+			    return;
+			}
+			var ind = email.indexOf("@");
+			if (ind == -1) {
+			    alert('Email is invalid (no @ symbol). Could not submit.');
+			    event.preventDefault();
+			    return;
+			}
+			else {
+			    var domain = email.substring(ind + 1);
+			    var period_ind = domain.indexOf(".");
+			    if (period_ind == -1) {
+				alert('Email is invalid (no extension). Could not submit.');
+				event.preventDefault();
+				return;
+			    }
+			}
 		    $('#first').hide(); 
 		    $('#last').hide(); 
 		    $('#email').hide(); 
