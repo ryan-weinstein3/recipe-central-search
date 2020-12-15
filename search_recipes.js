@@ -47,6 +47,10 @@ app.get('/Blogs', (req, res)=>{
 	res.render('Blogs'); 
 }); 
 
+app.get('/ThankYou', (req, res)=>{ 
+	res.render('ThankYou'); 
+}); 
+
 app.get('/SubmitRecipe', (req, res)=>{ 
 	res.render('SubmitRecipe'); 
 }); 
@@ -134,7 +138,7 @@ app.get('/SendEmail', (req, res)=>{
 		console.log('Email sent: ' + info.response);
 	    }
 	});
-	res.render('Home');
+	res.render('ThankYou');
 });
 
 var server = app.listen((process.env.PORT || 3000), function() { 
