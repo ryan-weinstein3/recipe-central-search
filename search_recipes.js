@@ -61,7 +61,7 @@ app.get('/Recipes', (req, res)=>{
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
-				var data = "<ul id="recipesfilter">";
+				var data = "<ul id='recipesfilter'>";
 				for (var i = 0; i < result.length; i++){
                     			data += "<li><h4>" + result[i].strMeal + "</h4><img src=" + result[i].strMealThumb + " alt='mealImg' width='300' class='center'><br/><h3>Instructions</h3>" + result[i].strInstructions + "<br /><br /></li>";
                 		}
