@@ -89,7 +89,7 @@ app.get('/SearchResults', (req, res)=>{
 		    var dbo = db.db("Finaldb");
 			var collection = dbo.collection('Recipes');
 		        //query_string = "{$regex: '.*" + query_string  "abc.', $options:'i'}";
-			var query = {strMeal: {$regex: ".*query_string.", $options: "i"}};
+			var query = {strMeal: {$regex: "/.*" + query_string + "./", $options: "i"}};
 
 			await collection.find(query, {projection: {strMeal: 1, strInstructions: 1, strMealThumb: 1}}).toArray(function (err, result) {
 				if (err) throw err;
@@ -120,7 +120,7 @@ app.post('/SendEmail', (req, res)=>{
 	    service: 'gmail',
 	    auth: {
 		user: 'recipecent@gmail.com',
-		pass: 'RecipeYum',
+		pass: 'RecipeYum123',
 		}
 	});
 	console.log('HELLO');
